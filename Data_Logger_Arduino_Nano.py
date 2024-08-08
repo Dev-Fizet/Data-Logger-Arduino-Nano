@@ -1,5 +1,6 @@
 import serial
 import tkinter as tk
+from tkinter import messagebox
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
@@ -13,6 +14,21 @@ def leer_configuracion():
             key, value = line.strip().split('=')
             config[key] = value
     return config
+
+def reiniciar_medicion():
+    global ser
+    ser.close()  # Cerrar la conexión serial actual
+    ser.open()   # Reabrir la conexión serial
+    ser.flushInput()  # Limpiar el buffer de entrada del puerto serial
+    ser.flushOutput() # Limpiar el buffer de salida del puerto serial
+    ser.write(b'R')  # Envía el comando 'R' al Arduino para reiniciar la medición
+    
+    # Limpiar datos de la gráfica
+    xdata.clear()
+    ydata.clear()
+    
+    # Mostrar mensaje emergente
+    messagebox.showinfo("Reiniciar Medición", "Favor de descargar el capacitor")
 
 config = leer_configuracion()
 puerto_serie = config.get('port', 'COM3')
@@ -96,9 +112,12 @@ def update(frame):
 def iniciar_medicion():
     ser.write(b'S')  # Envía el comando 'S' al Arduino para iniciar la medición
 
-# Añadir el botón de inicio en Tkinter
+# Añadir los botones en Tkinter
 btn_iniciar = tk.Button(root, text="Iniciar Medición", command=iniciar_medicion)
 btn_iniciar.pack()
+
+btn_reiniciar = tk.Button(root, text="Reiniciar Medición", command=reiniciar_medicion)
+btn_reiniciar.pack()
 
 canvas = FigureCanvasTkAgg(fig, master=root)
 canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
