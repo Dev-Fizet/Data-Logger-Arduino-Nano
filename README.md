@@ -30,7 +30,13 @@ Este proyecto utiliza un Arduino Nano y una interfaz gráfica en Python para vis
      pip install pyserial matplotlib numpy
      ```
 
-3. **Configurar el Arduino:**
+3. **Instalar los drivers para Arduino Nano:**
+   - Muchos Arduino Nano genéricos utilizan el chip CH340 para la comunicación USB. Para instalar el driver correspondiente:
+     - Visita el siguiente enlace: [Driver CH340 para Arduino Nano](https://www.geekfactory.mx/tutoriales-arduino/driver-ch340-para-arduino-chinos-o-genericos/).
+     - Sigue las instrucciones detalladas para descargar e instalar el driver en tu sistema operativo.
+   - Una vez instalado, conecta tu Arduino Nano al computador para que sea reconocido correctamente.
+
+4. **Configurar el Arduino:**
    - Conecta el Arduino Nano al computador.
    - Carga el siguiente código en tu Arduino Nano para enviar datos de tiempo y voltaje a través del puerto serial:
 
@@ -53,7 +59,7 @@ Este proyecto utiliza un Arduino Nano y una interfaz gráfica en Python para vis
      }
      ```
 
-4. **Configurar el archivo `config.txt`:**
+5. **Configurar el archivo `config.txt`:**
    - Crea un archivo llamado `config.txt` en el mismo directorio que el script de Python.
    - El archivo debe contener los siguientes parámetros de configuración:
 
