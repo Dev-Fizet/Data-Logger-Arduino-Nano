@@ -96,7 +96,7 @@ Este proyecto utiliza un Arduino Nano y una interfaz gráfica en Python para vis
 
 El circuito RC tiene una resistencia \( R \) y un capacitor \( C \). La constante de tiempo \( \tau \) del circuito se define como:
 
-![Ecuación de la constante de tiempo](https://quicklatex.com/latex3.f/ql_1e32c803c4d56058c1e7d4d8b5a394c7.png)
+![Ecuación de la constante de tiempo](https://mathjax.codecogs.com/svg.latex?%5Ctau%20%3D%20R%20%5Ccdot%20C)
 
 Para los valores dados:
 
@@ -105,41 +105,41 @@ Para los valores dados:
 
 Entonces,
 
-![Cálculo de la constante de tiempo](https://quicklatex.com/latex3.f/ql_b58b89d14dbe9a0f3bb6c4b4b3e08782.png)
+![Cálculo de la constante de tiempo](https://mathjax.codecogs.com/svg.latex?%5Ctau%20%3D%201.8%20%5Ctimes%2010%5E6%20%5Ccdot%2010%20%5Ctimes%2010%5E%7B-6%7D%20%3D%2018%20%5Ctext%7Bs%7D)
 
 ### Ecuación del Voltaje en el Capacitor
 
 La ecuación diferencial para el voltaje \( V_C(t) \) en el capacitor en respuesta a un escalón de voltaje \( V_{\text{in}} \) es:
 
-![Ecuación del voltaje en el capacitor](https://quicklatex.com/latex3.f/ql_6e08064e3a12a1a07c387d9266c4307d.png)
+![Ecuación del voltaje en el capacitor](https://mathjax.codecogs.com/svg.latex?V_C%28t%29%20%3D%20V_%7Bin%7D%20%5Cleft%281%20-%20e%5E%7B-%5Cfrac%7Bt%7D%7B%5Ctau%7D%7D%5Cright%29)
 
 Para un escalón de voltaje de 5V, la ecuación se convierte en:
 
-![Ecuación del voltaje para un escalón de 5V](https://quicklatex.com/latex3.f/ql_a9b75c2a62a6b46bb52e2cb76eb074b1.png)
+![Ecuación del voltaje para un escalón de 5V](https://mathjax.codecogs.com/svg.latex?V_C%28t%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B-%5Cfrac%7Bt%7D%7B18%7D%5Cright%29)
 
 ### Ejemplo de Cálculo
 
-Para calcular el voltaje en el capacitor en diferentes tiempos, sustituyamos los valores en la ecuación:
+Para calcular el voltaje en el capacitor en diferentes tiempos, sustituimos los valores en la ecuación:
 
 - **En \( t = 0 \) segundos:**
 
-  ![Voltaje en t=0](https://quicklatex.com/latex3.f/ql_d8a6e373d3d3283df07c6cb86a3dd94a.png)
+  ![Voltaje en t=0](https://mathjax.codecogs.com/svg.latex?V_C%280%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B0%7D%5Cright%29%20%3D%205%20%5Cleft%281%20-%201%5Cright%29%20%3D%200%20%5Ctext%7BV%7D)
 
 - **En \( t = 18 \) segundos (1 constante de tiempo):**
 
-  ![Voltaje en t=18](https://quicklatex.com/latex3.f/ql_2b06c44b9a4317f6a6891c83d6b281b3.png)
+  ![Voltaje en t=18](https://mathjax.codecogs.com/svg.latex?V_C%2818%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B-%31%7D%5Cright%29%20%5Capprox%205%20%5Cleft%281%20-%200.3679%5Cright%29%20%5Capprox%205%20%5Ctimes%200.6321%20%5Capprox%203.16%20%5Ctext%7BV%7D)
 
 - **En \( t = 36 \) segundos (2 constantes de tiempo):**
 
-  ![Voltaje en t=36](https://quicklatex.com/latex3.f/ql_12cf3f982a98d7c5a490c8d308d12a4a.png)
+  ![Voltaje en t=36](https://mathjax.codecogs.com/svg.latex?V_C%2836%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B-%32%7D%5Cright%29%20%5Capprox%205%20%5Cleft%281%20-%200.1353%5Cright%29%20%5Capprox%205%20%5Ctimes%200.8647%20%5Capprox%204.32%20%5Ctext%7BV%7D)
 
 - **En \( t = 54 \) segundos (3 constantes de tiempo):**
 
-  ![Voltaje en t=54](https://quicklatex.com/latex3.f/ql_9dfc1718a20d75c0a77cf62f6a70e10b.png)
+  ![Voltaje en t=54](https://mathjax.codecogs.com/svg.latex?V_C%2854%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B-%33%7D%5Cright%29%20%5Capprox%205%20%5Cleft%281%20-%200.0498%5Cright%29%20%5Capprox%205%20%5Ctimes%200.9502%20%5Capprox%204.75%20%5Ctext%7BV%7D)
 
 - **En \( t \to \infty \) segundos:**
 
-  ![Voltaje en t=infinito](https://quicklatex.com/latex3.f/ql_bebd72d2b7d132d3f9d104db7d3d2180.png)
+  ![Voltaje en t=infinito](https://mathjax.codecogs.com/svg.latex?V_C%28%5Cinfty%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B-%5Cinfty%7D%5Cright%29%20%3D%205%20%5Cleft%281%20-%200%5Cright%29%20%3D%205%20%5Ctext%7BV%7D)
 
 ### Interpretación en la Gráfica
 
