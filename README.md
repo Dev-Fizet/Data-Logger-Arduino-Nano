@@ -122,7 +122,7 @@ La ecuación diferencial para el voltaje \( V_C(t) \) en el capacitor en respues
 Para un escalón de voltaje de 5V, la ecuación se convierte en:
 
 <p style="background-color: #f0f0f0; padding: 10px;">
-<img src="https://latex.codecogs.com/svg.latex?V_C%28t%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B-%5Cfrac%7Bt%7D%7B18%7D%5Cright%29" alt="Ecuación del voltaje para un escalón de 5V" style="background-color: #f0f0f0;">
+<img src="Ec_Vol_Cap.png" alt="Ecuación del voltaje para un escalón de 5V" style="background-color: #f0f0f0;">
 </p>
 
 ### Ejemplo de Cálculo
