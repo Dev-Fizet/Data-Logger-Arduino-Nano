@@ -6,16 +6,16 @@ Este proyecto utiliza un Arduino Nano y una interfaz gráfica en Python para vis
 
 ### Hardware
 
-- Arduino Nano
-- Resistencia de 1.8MΩ
-- Capacitor de 10μF
-- Cable USB para la conexión del Arduino
-- Protoboard y cables de conexión
+- **Arduino Nano**
+- **Resistencia de 1.8 MΩ**
+- **Capacitor de 10 μF**
+- **Cable USB** para la conexión del Arduino
+- **Protoboard y cables de conexión**
 
 ### Software
 
-- Python 3.x
-- Librerías Python: `pyserial`, `tkinter`, `matplotlib`, `numpy`
+- **Python 3.x**
+- **Librerías Python**: `pyserial`, `tkinter`, `matplotlib`, `numpy`
 
 ## Instalación
 
@@ -32,7 +32,7 @@ Este proyecto utiliza un Arduino Nano y una interfaz gráfica en Python para vis
 
 3. **Configurar el Arduino:**
    - Conecta el Arduino Nano al computador.
-   - Carga el código adecuado en tu Arduino Nano para enviar datos de tiempo y voltaje a través del puerto serial. Aquí tienes un ejemplo básico de código para el Arduino:
+   - Carga el siguiente código en tu Arduino Nano para enviar datos de tiempo y voltaje a través del puerto serial:
 
      ```cpp
      int analogPin = A5;  // Pin analógico para lectura del voltaje
@@ -89,6 +89,63 @@ Este proyecto utiliza un Arduino Nano y una interfaz gráfica en Python para vis
 4. **Configuración de la gráfica:**
    - La gráfica se ajusta automáticamente para mostrar los datos en el rango de 0 a 125 segundos y de 0 a 5 voltios.
    - La escala de la gráfica está configurada para ser proporcional a los valores del voltaje y el tiempo.
+
+## Cálculos Detallados
+
+### Respuesta del Circuito RC
+
+El circuito RC tiene una resistencia \( R \) y un capacitor \( C \). La constante de tiempo \( \tau \) del circuito se define como:
+
+\[ \tau = R \cdot C \]
+
+Para los valores dados:
+
+- **R** = 1.8 MΩ = \( 1.8 \times 10^6 \) Ω
+- **C** = 10 μF = \( 10 \times 10^{-6} \) F
+
+Entonces,
+
+\[ \tau = 1.8 \times 10^6 \, \Omega \times 10 \times 10^{-6} \, \text{F} = 18 \, \text{s} \]
+
+### Ecuación del Voltaje en el Capacitor
+
+La ecuación diferencial para el voltaje \( V_C(t) \) en el capacitor en respuesta a un escalón de voltaje \( V_{\text{in}} \) es:
+
+\[ V_C(t) = V_{\text{in}} \left(1 - e^{-\frac{t}{\tau}}\right) \]
+
+Para un escalón de voltaje de 5V, la ecuación se convierte en:
+
+\[ V_C(t) = 5 \left(1 - e^{-\frac{t}{18}}\right) \]
+
+### Ejemplo de Cálculo
+
+Para calcular el voltaje en el capacitor en diferentes tiempos, sustituyamos los valores en la ecuación:
+
+- **En \( t = 0 \) segundos:**
+
+  \[ V_C(0) = 5 \left(1 - e^{0}\right) = 5 \left(1 - 1\right) = 0 \, \text{V} \]
+
+- **En \( t = 18 \) segundos (1 constante de tiempo):**
+
+  \[ V_C(18) = 5 \left(1 - e^{-1}\right) \approx 5 \left(1 - 0.3679\right) \approx 5 \times 0.6321 \approx 3.16 \, \text{V} \]
+
+- **En \( t = 36 \) segundos (2 constantes de tiempo):**
+
+  \[ V_C(36) = 5 \left(1 - e^{-2}\right) \approx 5 \left(1 - 0.1353\right) \approx 5 \times 0.8647 \approx 4.32 \, \text{V} \]
+
+- **En \( t = 54 \) segundos (3 constantes de tiempo):**
+
+  \[ V_C(54) = 5 \left(1 - e^{-3}\right) \approx 5 \left(1 - 0.0498\right) \approx 5 \times 0.9502 \approx 4.75 \, \text{V} \]
+
+- **En \( t \to \infty \) segundos:**
+
+  \[ V_C(t) \to 5 \, \text{V} \]
+
+### Interpretación en la Gráfica
+
+La gráfica en tiempo real mostrará cómo el voltaje en el capacitor se aproxima asintóticamente al voltaje de entrada. La curva debe seguir una forma exponencial que se aproxima a 5V, siguiendo la ecuación proporcionada. 
+
+Para una visualización precisa, asegúrate de que los tiempos de muestreo y los intervalos de tiempo en la interfaz gráfica estén configurados para capturar y mostrar adecuadamente esta respuesta.
 
 ## Nota
 
