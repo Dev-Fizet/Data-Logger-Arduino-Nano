@@ -96,9 +96,7 @@ Este proyecto utiliza un Arduino Nano y una interfaz gráfica en Python para vis
 
 El circuito RC tiene una resistencia \( R \) y un capacitor \( C \). La constante de tiempo \( \tau \) del circuito se define como:
 
-\[
-\tau = R \cdot C
-\]
+![Ecuación de la constante de tiempo](https://latex.codecogs.com/png.latex?%5Ctau%20%3D%20R%20%5Ccdot%20C)
 
 Para los valores dados:
 
@@ -107,23 +105,17 @@ Para los valores dados:
 
 Entonces,
 
-\[
-\tau = 1.8 \times 10^6 \, \Omega \times 10 \times 10^{-6} \, \text{F} = 18 \, \text{s}
-\]
+![Cálculo de la constante de tiempo](https://latex.codecogs.com/png.latex?%5Ctau%20%3D%201.8%20%5Ctimes%2010%5E6%20%5C%20%CE%A9%20%5Ctimes%2010%20%5Ctimes%2010%5E%7B-6%7D%20%5Ctext%7BF%7D%20%3D%2018%20%5Ctext%7Bs%7D)
 
 ### Ecuación del Voltaje en el Capacitor
 
 La ecuación diferencial para el voltaje \( V_C(t) \) en el capacitor en respuesta a un escalón de voltaje \( V_{\text{in}} \) es:
 
-\[
-V_C(t) = V_{\text{in}} \left(1 - e^{-\frac{t}{\tau}}\right)
-\]
+![Ecuación del voltaje en el capacitor](https://latex.codecogs.com/png.latex?V_C%28t%29%20%3D%20V_%7Bin%7D%20%5Cleft%281%20-%20e%5E%7B-%5Cfrac%7Bt%7D%7B%5Ctau%7D%7D%5Cright%29)
 
 Para un escalón de voltaje de 5V, la ecuación se convierte en:
 
-\[
-V_C(t) = 5 \left(1 - e^{-\frac{t}{18}}\right)
-\]
+![Ecuación del voltaje para un escalón de 5V](https://latex.codecogs.com/png.latex?V_C%28t%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B-%5Cfrac%7Bt%7D%7B18%7D%5Cright%29)
 
 ### Ejemplo de Cálculo
 
@@ -131,33 +123,23 @@ Para calcular el voltaje en el capacitor en diferentes tiempos, sustituyamos los
 
 - **En \( t = 0 \) segundos:**
 
-  \[
-  V_C(0) = 5 \left(1 - e^{0}\right) = 5 \left(1 - 1\right) = 0 \, \text{V}
-  \]
+  ![Voltaje en t=0](https://latex.codecogs.com/png.latex?V_C%280%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B0%7D%5Cright%29%20%3D%205%20%5Cleft%281%20-%201%5Cright%29%20%3D%200%20%5Ctext%7BV%7D)
 
 - **En \( t = 18 \) segundos (1 constante de tiempo):**
 
-  \[
-  V_C(18) = 5 \left(1 - e^{-1}\right) \approx 5 \left(1 - 0.3679\right) \approx 5 \times 0.6321 \approx 3.16 \, \text{V}
-  \]
+  ![Voltaje en t=18](https://latex.codecogs.com/png.latex?V_C%2818%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B-%31%7D%5Cright%29%20%5Capprox%205%20%5Cleft%281%20-%200.3679%5Cright%29%20%5Capprox%205%20%5Ctimes%200.6321%20%5Capprox%203.16%20%5Ctext%7BV%7D)
 
 - **En \( t = 36 \) segundos (2 constantes de tiempo):**
 
-  \[
-  V_C(36) = 5 \left(1 - e^{-2}\right) \approx 5 \left(1 - 0.1353\right) \approx 5 \times 0.8647 \approx 4.32 \, \text{V}
-  \]
+  ![Voltaje en t=36](https://latex.codecogs.com/png.latex?V_C%2836%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B-%32%7D%5Cright%29%20%5Capprox%205%20%5Cleft%281%20-%200.1353%5Cright%29%20%5Capprox%205%20%5Ctimes%200.8647%20%5Capprox%204.32%20%5Ctext%7BV%7D)
 
 - **En \( t = 54 \) segundos (3 constantes de tiempo):**
 
-  \[
-  V_C(54) = 5 \left(1 - e^{-3}\right) \approx 5 \left(1 - 0.0498\right) \approx 5 \times 0.9502 \approx 4.75 \, \text{V}
-  \]
+  ![Voltaje en t=54](https://latex.codecogs.com/png.latex?V_C%2854%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B-%33%7D%5Cright%29%20%5Capprox%205%20%5Cleft%281%20-%200.0498%5Cright%29%20%5Capprox%205%20%5Ctimes%200.9502%20%5Capprox%204.75%20%5Ctext%7BV%7D)
 
 - **En \( t \to \infty \) segundos:**
 
-  \[
-  V_C(t) \to 5 \, \text{V}
-  \]
+  ![Voltaje en t=infinito](https://latex.codecogs.com/png.latex?V_C%28t%29%20%5Cto%205%20%5Ctext%7BV%7D)
 
 ### Interpretación en la Gráfica
 
