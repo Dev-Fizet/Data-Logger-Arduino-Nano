@@ -96,7 +96,9 @@ Este proyecto utiliza un Arduino Nano y una interfaz gráfica en Python para vis
 
 El circuito RC tiene una resistencia \( R \) y un capacitor \( C \). La constante de tiempo \( \tau \) del circuito se define como:
 
-\[ \tau = R \cdot C \]
+\[
+\tau = R \cdot C
+\]
 
 Para los valores dados:
 
@@ -105,17 +107,23 @@ Para los valores dados:
 
 Entonces,
 
-\[ \tau = 1.8 \times 10^6 \, \Omega \times 10 \times 10^{-6} \, \text{F} = 18 \, \text{s} \]
+\[
+\tau = 1.8 \times 10^6 \, \Omega \times 10 \times 10^{-6} \, \text{F} = 18 \, \text{s}
+\]
 
 ### Ecuación del Voltaje en el Capacitor
 
 La ecuación diferencial para el voltaje \( V_C(t) \) en el capacitor en respuesta a un escalón de voltaje \( V_{\text{in}} \) es:
 
-\[ V_C(t) = V_{\text{in}} \left(1 - e^{-\frac{t}{\tau}}\right) \]
+\[
+V_C(t) = V_{\text{in}} \left(1 - e^{-\frac{t}{\tau}}\right)
+\]
 
 Para un escalón de voltaje de 5V, la ecuación se convierte en:
 
-\[ V_C(t) = 5 \left(1 - e^{-\frac{t}{18}}\right) \]
+\[
+V_C(t) = 5 \left(1 - e^{-\frac{t}{18}}\right)
+\]
 
 ### Ejemplo de Cálculo
 
@@ -123,23 +131,33 @@ Para calcular el voltaje en el capacitor en diferentes tiempos, sustituyamos los
 
 - **En \( t = 0 \) segundos:**
 
-  \[ V_C(0) = 5 \left(1 - e^{0}\right) = 5 \left(1 - 1\right) = 0 \, \text{V} \]
+  \[
+  V_C(0) = 5 \left(1 - e^{0}\right) = 5 \left(1 - 1\right) = 0 \, \text{V}
+  \]
 
 - **En \( t = 18 \) segundos (1 constante de tiempo):**
 
-  \[ V_C(18) = 5 \left(1 - e^{-1}\right) \approx 5 \left(1 - 0.3679\right) \approx 5 \times 0.6321 \approx 3.16 \, \text{V} \]
+  \[
+  V_C(18) = 5 \left(1 - e^{-1}\right) \approx 5 \left(1 - 0.3679\right) \approx 5 \times 0.6321 \approx 3.16 \, \text{V}
+  \]
 
 - **En \( t = 36 \) segundos (2 constantes de tiempo):**
 
-  \[ V_C(36) = 5 \left(1 - e^{-2}\right) \approx 5 \left(1 - 0.1353\right) \approx 5 \times 0.8647 \approx 4.32 \, \text{V} \]
+  \[
+  V_C(36) = 5 \left(1 - e^{-2}\right) \approx 5 \left(1 - 0.1353\right) \approx 5 \times 0.8647 \approx 4.32 \, \text{V}
+  \]
 
 - **En \( t = 54 \) segundos (3 constantes de tiempo):**
 
-  \[ V_C(54) = 5 \left(1 - e^{-3}\right) \approx 5 \left(1 - 0.0498\right) \approx 5 \times 0.9502 \approx 4.75 \, \text{V} \]
+  \[
+  V_C(54) = 5 \left(1 - e^{-3}\right) \approx 5 \left(1 - 0.0498\right) \approx 5 \times 0.9502 \approx 4.75 \, \text{V}
+  \]
 
 - **En \( t \to \infty \) segundos:**
 
-  \[ V_C(t) \to 5 \, \text{V} \]
+  \[
+  V_C(t) \to 5 \, \text{V}
+  \]
 
 ### Interpretación en la Gráfica
 
