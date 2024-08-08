@@ -1,0 +1,3 @@
+port=COM6
+baudrate=9600
+sampling_rate=100
