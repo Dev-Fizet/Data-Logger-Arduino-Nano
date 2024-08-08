@@ -96,7 +96,9 @@ Este proyecto utiliza un Arduino Nano y una interfaz gráfica en Python para vis
 
 El circuito RC tiene una resistencia \( R \) y un capacitor \( C \). La constante de tiempo \( \tau \) del circuito se define como:
 
-![Ecuación de la constante de tiempo](https://latex.codecogs.com/svg.latex?%5Ctau%20%3D%20R%20%5Ccdot%20C)
+<p style="background-color: #f0f0f0; padding: 10px;">
+<img src="https://latex.codecogs.com/svg.latex?%5Ctau%20%3D%20R%20%5Ccdot%20C" alt="Ecuación de la constante de tiempo" style="background-color: #f0f0f0;">
+</p>
 
 Para los valores dados:
 
@@ -105,17 +107,23 @@ Para los valores dados:
 
 Entonces,
 
-![Cálculo de la constante de tiempo](https://latex.codecogs.com/svg.latex?%5Ctau%20%3D%201.8%20%5Ctimes%2010%5E6%20%5Ccdot%2010%20%5Ctimes%2010%5E%7B-6%7D%20%3D%2018%20%5Ctext%7Bs%7D)
+<p style="background-color: #f0f0f0; padding: 10px;">
+<img src="https://latex.codecogs.com/svg.latex?%5Ctau%20%3D%201.8%20%5Ctimes%2010%5E6%20%5Ccdot%2010%20%5Ctimes%2010%5E%7B-6%7D%20%3D%2018%20%5Ctext%7Bs%7D" alt="Cálculo de la constante de tiempo" style="background-color: #f0f0f0;">
+</p>
 
 ### Ecuación del Voltaje en el Capacitor
 
 La ecuación diferencial para el voltaje \( V_C(t) \) en el capacitor en respuesta a un escalón de voltaje \( V_{\text{in}} \) es:
 
-![Ecuación del voltaje en el capacitor](https://latex.codecogs.com/svg.latex?V_C%28t%29%20%3D%20V_%7Bin%7D%20%5Cleft%281%20-%20e%5E%7B-%5Cfrac%7Bt%7D%7B%5Ctau%7D%7D%5Cright%29)
+<p style="background-color: #f0f0f0; padding: 10px;">
+<img src="https://latex.codecogs.com/svg.latex?V_C%28t%29%20%3D%20V_%7Bin%7D%20%5Cleft%281%20-%20e%5E%7B-%5Cfrac%7Bt%7D%7B%5Ctau%7D%7D%5Cright%29" alt="Ecuación del voltaje en el capacitor" style="background-color: #f0f0f0;">
+</p>
 
 Para un escalón de voltaje de 5V, la ecuación se convierte en:
 
-![Ecuación del voltaje para un escalón de 5V](https://latex.codecogs.com/svg.latex?V_C%28t%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B-%5Cfrac%7Bt%7D%7B18%7D%5Cright%29)
+<p style="background-color: #f0f0f0; padding: 10px;">
+<img src="https://latex.codecogs.com/svg.latex?V_C%28t%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B-%5Cfrac%7Bt%7D%7B18%7D%5Cright%29" alt="Ecuación del voltaje para un escalón de 5V" style="background-color: #f0f0f0;">
+</p>
 
 ### Ejemplo de Cálculo
 
@@ -123,19 +131,27 @@ Para calcular el voltaje en el capacitor en diferentes tiempos, sustituimos los 
 
 - **En \( t = 0 \) segundos:**
 
-  ![Voltaje en t=0](https://latex.codecogs.com/svg.latex?V_C%280%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B0%7D%5Cright%29%20%3D%205%20%5Cleft%281%20-%201%5Cright%29%20%3D%200%20%5Ctext%7BV%7D)
+  <p style="background-color: #f0f0f0; padding: 10px;">
+  <img src="https://latex.codecogs.com/svg.latex?V_C%280%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B0%7D%5Cright%29%20%3D%205%20%5Cleft%281%20-%201%5Cright%29%20%3D%200%20%5Ctext%7BV%7D" alt="Voltaje en t=0" style="background-color: #f0f0f0;">
+  </p>
 
 - **En \( t = 18 \) segundos (1 constante de tiempo):**
 
-  ![Voltaje en t=18](https://latex.codecogs.com/svg.latex?V_C%2818%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B-%31%7D%5Cright%29%20%5Capprox%205%20%5Cleft%281%20-%200.3679%5Cright%29%20%5Capprox%205%20%5Ctimes%200.6321%20%5Capprox%203.16%20%5Ctext%7BV%7D)
+  <p style="background-color: #f0f0f0; padding: 10px;">
+  <img src="https://latex.codecogs.com/svg.latex?V_C%2818%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B-%31%7D%5Cright%29%20%5Capprox%205%20%5Cleft%281%20-%200.3679%5Cright%29%20%5Capprox%205%20%5Ctimes%200.6321%20%5Capprox%203.16%20%5Ctext%7BV%7D" alt="Voltaje en t=18" style="background-color: #f0f0f0;">
+  </p>
 
 - **En \( t = 36 \) segundos (2 constantes de tiempo):**
 
-  ![Voltaje en t=36](https://latex.codecogs.com/svg.latex?V_C%2836%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B-%32%7D%5Cright%29%20%5Capprox%205%20%5Cleft%281%20-%200.1353%5Cright%29%20%5Capprox%205%20%5Ctimes%200.8647%20%5Capprox%204.32%20%5Ctext%7BV%7D)
+  <p style="background-color: #f0f0f0; padding: 10px;">
+  <img src="https://latex.codecogs.com/svg.latex?V_C%2836%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B-%32%7D%5Cright%29%20%5Capprox%205%20%5Cleft%281%20-%200.1353%5Cright%29%20%5Capprox%205%20%5Ctimes%200.8647%20%5Capprox%204.32%20%5Ctext%7BV%7D" alt="Voltaje en t=36" style="background-color: #f0f0f0;">
+  </p>
 
 - **En \( t \to \infty \) segundos:**
 
-  ![Voltaje en t=infinito](https://latex.codecogs.com/svg.latex?V_C%28%5Cinfty%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B-%5Cinfty%7D%5Cright%29%20%3D%205%20%5Cleft%281%20-%200%5Cright%29%20%3D%205%20%5Ctext%7BV%7D)
+  <p style="background-color: #f0f0f0; padding: 10px;">
+  <img src="https://latex.codecogs.com/svg.latex?V_C%28%5Cinfty%29%20%3D%205%20%5Cleft%281%20-%20e%5E%7B-%5Cinfty%7D%5Cright%29%20%3D%205%20%5Cleft%281%20-%200%5Cright%29%20%3D%205%20%5Ctext%7BV%7D" alt="Voltaje en t=infinito" style="background-color: #f0f0f0;">
+  </p>
 
 ### Interpretación en la Gráfica
 
